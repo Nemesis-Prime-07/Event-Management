@@ -85,6 +85,18 @@ body {
 .college-header {
     text-align: center;
     margin-bottom: var(--spacing-2xl);
+
+}
+
+.college-logo {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.college-logo-img {
+    width: 100px; /* adjust size as needed */
+    height: auto;
+    border-radius: 8px;
 }
 
 .college-logo {
@@ -833,27 +845,4 @@ body {
 
 
 
-/* Styles the logo container */
-.college-logo {
-    margin-bottom: 1rem; /* Adds space between the logo and the title */
-}
-
-/* Sets the size of your logo */
-.college-logo .logo {
-    height: 80px;  /* Adjust this height as you like */
-    width: auto;   /* Keeps the logo from stretching */
-}
-
-/* Adjusts your h1 title */
-.login-header h1 {
-     margin-top: 0; /* Remove default top margin */
-     font-size: 1.5rem;
-     color: var(--secondary-color);
-}
-
-/* Styles your new tagline */
-.college-tagline {
-    font-size: 1.1rem;
-    color: var(--dark-gray);
-    margin-top: 0.25rem;
-}
+/
