@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Management - Inter-College Events</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1 id="departmentGreeting">Welcome, Department</h1>
+                </div>
+                <div class="header-right">
+                    <button id="logoutBtn" class="btn-secondary">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <nav class="app-nav">
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-tab="upcoming">Upcoming Events</button>
+                <button class="nav-tab" data-tab="past">Past Events</button>
+                <button class="nav-tab" data-tab="add">Add New Event</button>
+            </div>
+        </nav>
+
+        <main class="app-main">
+            <!-- Upcoming Events Tab -->
+            <section id="upcomingTab" class="tab-content active">
+                <div class="section-header">
+                    <h2>Upcoming Events</h2>
+                    <p class="section-description">Events scheduled for your department</p>
+                </div>
+                <div id="upcomingEvents" class="events-grid">
+                    <div class="empty-state">
+                        <p>No upcoming events. Create one to get started!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Past Events Tab -->
+            <section id="pastTab" class="tab-content">
+                <div class="section-header">
+                    <h2>Past Events</h2>
+                    <p class="section-description">Archived events from your department</p>
+                </div>
+                <div id="pastEvents" class="events-grid">
+                    <div class="empty-state">
+                        <p>No past events yet.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Add New Event Tab -->
+            <section id="addTab" class="tab-content">
+                <div class="section-header">
+                    <h2>Create New Event</h2>
+                    <p class="section-description">Add a new event to your department's calendar</p>
+                </div>
+                <div class="add-event-form-container">
+                    <form id="eventForm" class="event-form">
+                        <div class="form-row">
+                            <div class="form-group full">
+                                <label for="eventTitle">Event Title *</label>
+                                <input
+                                    type="text"
+                                    id="eventTitle"
+                                    placeholder="Enter event title"
+                                    required
+                                />
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="eventDate">Date *</label>
+                                <input
+                                    type="date"
+                                    id="eventDate"
+                                    required
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="eventTime">Time *</label>
+                                <input
+                                    type="time"
+                                    id="eventTime"
+                                    required
+                                />
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group full">
+                                <label for="eventVenue">Venue *</label>
+                                <input
+                                    type="text"
+                                    id="eventVenue"
+                                    placeholder="Enter venue location"
+                                    required
+                                />
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group full">
+                                <label for="eventDescription">Description *</label>
+                                <textarea
+                                    id="eventDescription"
+                                    placeholder="Enter event description (2-3 lines minimum)"
+                                    rows="4"
+                                    required
+                                ></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="eventImage">Event Image</label>
+                                <input
+                                    type="file"
+                                    id="eventImage"
+                                    accept="image/*"
+                                />
+                                <div id="imagePreview" class="image-preview"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="eventVideo">Event Video (MP4)</label>
+                                <input
+                                    type="file"
+                                    id="eventVideo"
+                                    accept="video/mp4"
+                                />
+                                <div id="videoPreview" class="video-preview"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Save Event</button>
+                            <button type="reset" class="btn-secondary">Clear</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- Event Modal for Viewing/Editing -->
+        <div id="eventModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modalTitle">View Event</h2>
+                    <button id="closeModalBtn" class="btn-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div id="modalEventContent"></div>
+                </div>
+                <div class="modal-footer">
+                    <button id="editEventBtn" class="btn-primary">Edit Event</button>
+                    <button id="deleteEventBtn" class="btn-danger">Delete Event</button>
+                    <button id="closeModalFooterBtn" class="btn-secondary">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notification Toast -->
+        <div id="notificationToast" class="notification-toast"></div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

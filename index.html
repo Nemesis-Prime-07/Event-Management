@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inter-College Event Login</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="college-header">
+                <div class="college-logo"><img src="download.png" alt="College Logo" class="logo"></div>
+                <h1>XYZ College</h1>
+                <p class="college-tagline">Inter-College Event Management System</p>
+            </div>
+
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="departmentCode">Department Code</label>
+                    <input
+                        type="text"
+                        id="departmentCode"
+                        placeholder="e.g., CS, EE, ME, CIVIL, ECE"
+                        autocomplete="off"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter password"
+                        autocomplete="off"
+                    />
+                </div>
+
+                <button type="submit" class="btn-primary btn-login">Login</button>
+
+                <div class="forgot-password">
+                    <a href="#" id="forgotLink" title="Contact administration for password reset">Forgot Password?</a>
+                </div>
+            </form>
+
+            <div id="errorMessage" class="error-message"></div>
+
+            <div class="demo-credentials">
+                <p class="demo-label">Demo Credentials:</p>
+                <ul>
+                    <li><strong>CS</strong> / 1234</li>
+                    <li><strong>EE</strong> / 5678</li>
+                    <li><strong>ME</strong> / 9012</li>
+                    <li><strong>CIVIL</strong> / 3456</li>
+                    <li><strong>ECE</strong> / 7890</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
